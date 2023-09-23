@@ -25,7 +25,7 @@ console.log(getChannelName(channels[0]));
  * - returns the number of videos that channel has
  ****************************************************************/
 function numberOfVideos(channel) {
-  return channel.videos
+  return channel.videos.length
 }
 console.log(numberOfVideos(channels[0]))
 
@@ -40,13 +40,14 @@ console.log(numberOfVideos(channels[0]))
  ****************************************************************/
 function channelHasVideo(videoTitle, channel) {
 
-  return channel.videos.some((video)=>  video.title == videoTitle )
+  return channel.videos.some((video)=>  video.title == videoTitle )}
+
 // return channel.videos.some((video)=>  video.title == videoTitle )
 // channel.forEach()
 // videoTitle == channels.videos.title return true 
 
-}
-// console.log(channelHasVideo("The Universal S", channels[0]));
+
+console.log(channelHasVideo("The Universal S", channels[0]));
 console.log(channelHasVideo("The Universal S", channels[1]));
 
 /**************************************************************
@@ -72,14 +73,14 @@ console.log(getChannelByName("PowerfulJRE", channels))
  * BONUS: use iteration methods `.find()` and `.some()`
  ****************************************************************/
 function getChannelByVideoTitle(videoTitle, channels) {
-  return channels.find( (channel)=> channel.videos.some((video) => video.title == videoTitle))
+  return channels.find( (channel)=> channel.videos.some((video) => video.title == videoTitle))}
 
 // return channels.some( (channel)=> videoTitle == channel.videos.name).find((video) => video.title == videoTitle)
 // return channels.filter( videoTitle == channels.videoes.title)
   // return channels.find( (channelobj)=> channelobj.name == channelName )
  //////  return channel.forEach( channels.some(channels.channel.video.title == videoTile))
 // return channel.videos.some((video)=>  video.title == videoTitle )
-}
+
 console.log(getChannelByVideoTitle("The Universal S", channels));
 
 /**************************************************************
@@ -91,10 +92,15 @@ console.log(getChannelByVideoTitle("The Universal S", channels));
  * Hint: use string method `.includes()` and iteration method `.filter()`
  ****************************************************************/
 function searchChannels(query, channels) {
+  let filtered = []
+  channels.filter((channel)=>{channel.includes(query)} ) 
+  return filtered
+
+  
   // does includes in the filter 
   //  return channels.includes(  (query)=> channel.name && channel.description)
 }
-// console.log(searchChannels("the", channels))
+console.log(searchChannels("the", channels))
 
 module.exports = {
   getChannelName,
